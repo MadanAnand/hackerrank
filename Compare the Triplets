@@ -14,10 +14,20 @@ public class Solution {
 
     // Complete the compareTriplets function below.
     static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
-        for(int ai : a){
-            
+        int countA=0;
+        int countB=0;
+        List<Integer> result= new ArrayList<>();
+        for(int i=0; i< a.size();i++){
+            if(a.get(i) > b.get(i)){
+                countA++;
+            }
+            if(a.get(i) < b.get(i)){
+                countB++;
+            }
         }
-
+        result.add(countA);
+        result.add(countB);
+    return result;
     }
 
     public static void main(String[] args) throws IOException {
