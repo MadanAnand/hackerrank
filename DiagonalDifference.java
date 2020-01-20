@@ -20,32 +20,23 @@ class Result {
      */
 
     public static int diagonalDifference(List<List<Integer>> arr) {
-        int result =0;
-        List<Integer> ar=new ArrayList<>();
-        List<Integer> aq=new ArrayList<>();
+        int d1=0;
+        int d2=0;
             for(int i=0; i<arr.size(); i++){
                 for(int j=0;j<arr.size();j++){
                     if(i==j){
-                      ar.add((arr.get(i)).get(j));
+                        d1+=(arr.get(i)).get(j);
                     }
                     if(i+j == arr.size() -1){
-                         aq.add((arr.get(i)).get(j));
+                        d2+=(arr.get(i)).get(j);
                     }
                 }
             
             }
-    result= Math.abs(getAbs(ar) - getAbs(aq));
-    System.out.println(result );
-    return result;
+
+    return Math.abs(d1 - d2);
     }
 
-    public static int getAbs(List<Integer> x){
-        int r=0;
-        for(int i:x){
-            r +=i;
-        }
-        return r;
-    }
 }
 
 public class Solution {
